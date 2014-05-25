@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Data description</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Data description</h1>
+
+<p>This codebook describes the dataset obtained by processing the data from <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip</a> with the <strong>run_analysis.R</strong> script from this repo.</p>
+
+<p>Data processing steps are described in the <strong>README.md</strong> file.</p>
+
+<h1>Variables</h1>
+
+<h2>The dataset contains 68 variables:</h2>
+
+<p>*Please note that the variable names in this codebook are more cleaned-up than those in the original dataset. I&#39;ve kept the orginal variable names with slight modificatiions in the original dataset.</p>
+
+<h3>Subject</h3>
+
+<p>The numeric identificator of the subject performing the activity. Values: from 1 to 30</p>
+
+<h3>Activity</h3>
+
+<p><em>The type of activty during which the signals were recorded. Values:</em></p>
+
+<ul>
+<li>WALKING</li>
+<li>WALKING_UPSTAIRS</li>
+<li>WALKING_DOWNSTAIRS</li>
+<li>SITTING</li>
+<li>STANDING</li>
+<li>LAYING</li>
+</ul>
+
+<h3>tBodyAcc.mean.X</h3>
+
+<p>Average mean of time domain body acceleration signal on the X axis. Values: from -1 to 1</p>
+
+<h3>tBodyAcc.mean.Y</h3>
+
+<p>Average mean of time domain body acceleration signal on the Y axis. Values: from -1 to 1</p>
+
+<h3>tBodyAcc.mean.Z</h3>
+
+<p>Average mean of time domain body acceleration signal on the Z axis. Values: from -1 to 1</p>
+
+<h3>tBodyAcc.std.X</h3>
+
+<p>Average standard deviation of time domain body acceleration signal on the X axis. Values: from -1 to 1</p>
+
+<h3>tBodyAcc.std.Y</h3>
+
+<p>Average standard deviation of time domain body acceleration signal on the Y axis. Values: from -1 to 1</p>
+
+<h3>tBodyAcc.std.Z</h3>
+
+<p>Average standard deviation of time domain gravity acceleration signal on the Z axis. Values: from -1 to 1</p>
+
+<h3>tGravityAcc.mean.X</h3>
+
+<p>Average mean of time domain gravity acceleration signal on the X axis. Values: from -1 to 1</p>
+
+<h3>tGravityAcc.mean.Y</h3>
+
+<p>Average mean of time domain gravity acceleration signal on the Y axis. Values: from -1 to 1</p>
+
+<h3>tGravityAcc.mean.Z</h3>
+
+<p>Average mean of time domain gravity acceleration signal on the Z axis. Values: from -1 to 1</p>
+
+<h3>tGravityAcc.std.X</h3>
+
+<p>Average standard deviation of time domain gravity acceleration signal on the X axis. Values: from -1 to 1</p>
+
+<h3>tGravityAcc.std.Y</h3>
+
+<p>Average standard deviation of time domain gravity acceleration signal on the Y axis. Values: from -1 to 1</p>
+
+<h3>tGravityAcc.std.Z</h3>
+
+<p>Average standard deviation of time domain body acceleration signal on the Z axis. Values: from -1 to 1</p>
+
+<h3>tBodyAccJerk.mean.X</h3>
+
+<p>Average mean of time domain body acceleration jerk signal on the X axis. Values: from -1 to 1</p>
+
+<h3>tBodyAccJerk.mean.Y</h3>
+
+<p>Average mean of time domain body acceleration jerk signal on the Y axis. Values: from -1 to 1</p>
+
+<h3>tBodyAccJerk.mean.Z</h3>
+
+<p>Average mean of time domain body acceleration jerk signal on the Z axis. Values: from -1 to 1</p>
+
+<h3>tBodyAccJerk.std.X</h3>
+
+<p>Average standard deviation of time domain body acceleration jerk signal on the X axis. Values: from -1 to 1</p>
+
+<h3>tBodyAccJerk.std.Y</h3>
+
+<p>Average standard deviation of time domain body acceleration jerk signal on the Y axis. Values: from -1 to 1</p>
+
+<h3>tBodyAccJerk.std.Z</h3>
+
+<p>Average standard deviation of time domain body acceleration jerk signal on the Z axis. Values: from -1 to 1</p>
+
+<h3>tBodyGyro.mean.X</h3>
+
+<p>Average mean of time domain body angular velocity signal on the X axis. Values: from -1 to 1</p>
+
+<h3>tBodyGyro.mean.Y</h3>
+
+<p>Average mean of time domain body angular velocity signal on the Y axis. Values: from -1 to 1</p>
+
+<h3>tBodyGyro.mean.Z</h3>
+
+<p>Average mean of time domain body angular velocity signal on the Z axis. Values: from -1 to 1</p>
+
+<h3>tBodyGyro.std.X</h3>
+
+<p>Average standard deviation of time domain body angular velocity signal on the X axis. Values: from -1 to 1</p>
+
+<h3>tBodyGyro.std.Y</h3>
+
+<p>Average standard deviation of time domain body angular velocity signal on the Y axis. Values: from -1 to 1</p>
+
+<h3>tBodyGyro.std.Z</h3>
+
+<p>Average standard deviation of time domain body angular velocity signal on the Z axis. Values: from -1 to 1</p>
+
+<h3>tBodyGyroJerk.mean.X</h3>
+
+<p>Average mean of time domain body angular velocity jerk signal on the X axis. Values: from -1 to 1</p>
+
+<h3>tBodyGyroJerk.mean.Y</h3>
+
+<p>Average mean of time domain body angular velocity jerk signal on the Y axis. Values: from -1 to 1</p>
+
+<h3>tBodyGyroJerk.mean.Z</h3>
+
+<p>Average mean of time domain body angular velocity jerk signal on the Z axis. Values: from -1 to 1</p>
+
+<h3>tBodyGyroJerk.std.X</h3>
+
+<p>Average standard deviation of time domain body angular velocity jerk signal on the X axis. Values: from -1 to 1</p>
+
+<h3>tBodyGyroJerk.std.Y</h3>
+
+<p>Average standard deviation of time domain body angular velocity jerk signal on the Y axis. Values: from -1 to 1</p>
+
+<h3>tBodyGyroJerk.std.Z</h3>
+
+<p>Average standard deviation of time domain body angular velocity jerk signal on the Z axis. Values: from -1 to 1</p>
+
+<h3>tBodyAccMag.mean</h3>
+
+<p>Average mean of magnitude of time domain body acceleration signal . Values: from -1 to 1</p>
+
+<h3>tBodyAccMag.std</h3>
+
+<p>Average standard deviation of magnitude of time domain body acceleration signal . Values: from -1 to 1</p>
+
+<h3>tGravityAccMag.mean</h3>
+
+<p>Average mean of magnitude of time domain gravity acceleration signal . Values: from -1 to 1</p>
+
+<h3>tGravityAccMag.std</h3>
+
+<p>Average standard deviation of magnitude of time domain gravity acceleration signal . Values: from -1 to 1</p>
+
+<h3>tBodyAccJerkMag.mean</h3>
+
+<p>Average mean of magnitude of time domain body acceleration jerk signal . Values: from -1 to 1</p>
+
+<h3>tBodyAccJerkMag.std</h3>
+
+<p>Average standard deviation of magnitude of time domain body acceleration jerk signal . Values: from -1 to 1</p>
+
+<h3>tBodyGyroMag.mean</h3>
+
+<p>Average mean of magnitude of time domain body angular velocity signal . Values: from -1 to 1</p>
+
+<h3>tBodyGyroMag.std</h3>
+
+<p>Average standard deviation of magnitude of time domain body angular velocity signal . Values: from -1 to 1</p>
+
+<h3>tBodyGyroJerkMag.mean</h3>
+
+<p>Average mean of magnitude of time domain body angular velocity jerk signal . Values: from -1 to 1</p>
+
+<h3>tBodyGyroJerkMag.std</h3>
+
+<p>Average standard deviation of magnitude of time domain body angular velocity jerk signal . Values: from -1 to 1</p>
+
+<h3>fBodyAcc.mean.X</h3>
+
+<p>Average mean of frequency domain body acceleration signal on the X axis. Values: from -1 to 1</p>
+
+<h3>fBodyAcc.mean.Y</h3>
+
+<p>Average mean of frequency domain body acceleration signal on the Y axis. Values: from -1 to 1</p>
+
+<h3>fBodyAcc.mean.Z</h3>
+
+<p>Average mean of frequency domain body acceleration signal on the Z axis. Values: from -1 to 1</p>
+
+<h3>fBodyAcc.std.X</h3>
+
+<p>Average standard deviation of frequency domain body acceleration signal on the X axis. Values: from -1 to 1</p>
+
+<h3>fBodyAcc.std.Y</h3>
+
+<p>Average standard deviation of frequency domain body acceleration signal on the Y axis. Values: from -1 to 1</p>
+
+<p>fBodyAcc.std.Z
+Average standard deviation of frequency domain body acceleration signal on the Z axis. Values: from -1 to 1</p>
+
+<h3>fBodyAccJerk.mean.X</h3>
+
+<p>Average mean of frequency domain body acceleration jerk signal on the X axis. Values: from -1 to 1</p>
+
+<h3>fBodyAccJerk.mean.Y</h3>
+
+<p>Average mean of frequency domain body acceleration jerk signal on the Y axis. Values: from -1 to 1</p>
+
+<h3>fBodyAccJerk.mean.Z</h3>
+
+<p>Average mean of frequency domain body acceleration jerk signal on the Z axis. Values: from -1 to 1</p>
+
+<h3>fBodyAccJerk.std.X</h3>
+
+<p>Average standard deviation of frequency domain body acceleration jerk signal on the X axis. Values: from -1 to 1</p>
+
+<h3>fBodyAccJerk.std.Y</h3>
+
+<p>Average standard deviation of frequency domain body acceleration jerk signal on the Y axis. Values: from -1 to 1</p>
+
+<h3>fBodyAccJerk.std.Z</h3>
+
+<p>Average standard deviation of frequency domain body acceleration jerk signal on the Z axis. Values: from -1 to 1</p>
+
+<h3>fBodyGyro.mean.X</h3>
+
+<p>Average mean of frequency domain body angular velocity signal on the X axis. Values: from -1 to 1</p>
+
+<h3>fBodyGyro.mean.Y</h3>
+
+<p>Average mean of frequency domain body angular velocity signal on the Y axis. Values: from -1 to 1</p>
+
+<h3>fBodyGyro.mean.Z</h3>
+
+<p>Average mean of frequency domain body angular velocity signal on the Z axis. Values: from -1 to 1</p>
+
+<h3>fBodyGyro.std.X</h3>
+
+<p>Average standard deviation of frequency domain body angular velocity signal on the X axis. Values: from -1 to 1</p>
+
+<h3>fBodyGyro.std.Y</h3>
+
+<p>Average standard deviation of frequency domain body angular velocity signal on the Y axis. Values: from -1 to 1</p>
+
+<h3>fBodyGyro.std.Z</h3>
+
+<p>Average standard deviation of frequency domain body angular velocity signal on the Z axis. Values: from -1 to 1</p>
+
+<h3>fBodyAccMag.mean</h3>
+
+<p>Average mean of magnitude of frequency domain body acceleration signal . Values: from -1 to 1</p>
+
+<h3>fBodyAccMag.std</h3>
+
+<p>Average standard deviation of magnitude of frequency domain body acceleration signal . Values: from -1 to 1</p>
+
+<h3>fBodyAccJerkMag.mean</h3>
+
+<p>Average mean of magnitude of frequency domain body acceleration jerk signal . Values: from -1 to 1</p>
+
+<h3>fBodyAccJerkMag.std</h3>
+
+<p>Average standard deviation of magnitude of frequency domain body acceleration jerk signal . Values: from -1 to 1</p>
+
+<h3>fBodyGyroMag.mean</h3>
+
+<p>Average mean of magnitude of frequency domain body angular velocity signal . Values: from -1 to 1</p>
+
+<h3>fBodyGyroMag.std</h3>
+
+<p>Average standard deviation of magnitude of frequency domain body angular velocity signal . Values: from -1 to 1</p>
+
+<h3>fBodyGyroJerkMag.mean</h3>
+
+<p>Average mean of magnitude of frequency domain body angular velocity jerk signal . Values: from -1 to 1</p>
+
+<h3>fBodyGyroJerkMag.std</h3>
+
+<p>Average standard deviation of magnitude of frequency domain body angular velocity jerk signal . Values: from -1 to 1</p>
+
+</body>
+
+</html>
+

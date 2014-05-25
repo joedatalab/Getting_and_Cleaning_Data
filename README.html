@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Summary</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Summary</h1>
+
+<p>This repo contains the scripts to prepare a tidy dataset from the data obtained at https: <a href="//d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">UCI HAR Dataset</a></p>
+
+<p>It will create and save as text file a dataset of average values of means and standard deviations of measurements for each activity of each subject.</p>
+
+<h2>Contents of Repository</h2>
+
+<p>The main data processing script <em>run_analysis.R</em> </p>
+
+<p>The description of variables of the resulting tidy dataset <em>CodeBook.md</em></p>
+
+<p>Explanation of data processing performed by the script <em>README.md</em> </p>
+
+<h2>Running the script</h2>
+
+<ol>
+<li>Clone this repo to your desktop</li>
+<li>Launch R and change the working directory to the folder with this repo&#39;s contents.</li>
+<li>If you have the UCI HAR Dataset folder or the getdata_projectfiles_UCI HAR Dataset.zip package - move or copy it to the working directory. </li>
+<li>Run the run_analysis.R script.</li>
+<li>The resulting dataset will be saved as TidyActivityDataset.txt in the working directory</li>
+</ol>
+
+<h2>Requirements</h2>
+
+<p>This script requires the plyr package. It will install and/or load it at the beginning.
+It expects the data to be located in the UCI HAR Dataset subfolder in the working directory.</p>
+
+<h2>Assumptions</h2>
+
+<ol>
+<li>The structure of folders and files in UCI HAR Dataset is preserved.</li>
+<li>The descriptive activity names and their corresponding numeric labels are in the activity_labels.txt file. They are ordered by the numeric label.</li>
+<li>The names of measurements are in features.txt file. They are indexed and ordered by their indices.</li>
+<li>The variables contianing the means of measurements have -mean() in their names, and those containing standard deviations of measurements have -std() in their names.</li>
+<li>The training data is in the train subfolder, and the test data in the test subfolder.</li>
+<li>The test and train measurements are in X_train.txt and X_test.txt respectively.</li>
+<li>The subject codes for the train and test datasets are in the subject_train.txt and subject_test.txt files respectively.</li>
+<li>The numeric activity labels for the train and test datasets are in y_train.txt and y_test.txt respectively.</li>
+<li>The data in the Initial Signals subfolders is not required to complete this assignment, so the script does not use it.</li>
+</ol>
+
+<h2>Data processing</h2>
+
+<ol>
+<li>Read files X_test,X_train.y_test,y_train,Subject_test,Subject_train,features and activity_lables text files into dataframes.</li>
+<li>Column bind Dataframes y_test and subject_test and add column names Activity and Subject to it. -&gt;A</li>
+<li>Column bind Dataframes y_train and subject_train and add column names Activity and Subject to it. -&gt;B</li>
+<li>Merge A and B (dim-10299*2) -&gt;C</li>
+<li>Merge X_train and X_test data -&gt; D (dim-10299*561)</li>
+<li>Change column names of D from features.txt</li>
+<li>Eliminate columns from D which do not have &ldquo;mean()&rdquo; or &ldquo;std()&rdquo; in the column names. -&gt;E (dim-10299*66)</li>
+<li>Column bind C and E (dim-10299*68)</li>
+<li>Take mean of observations per activity per subject. (dim-180*68). </li>
+<li>Replace activity numbers with Activity names from activity_lables.txt-&gt; TidyActivityDataSet</li>
+<li>use write.table to get a text file from the above Data Frame.</li>
+</ol>
+
+</body>
+
+</html>
+

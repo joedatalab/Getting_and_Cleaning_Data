@@ -1,0 +1,53 @@
+Summary
+========================================================
+
+This repo contains the scripts to prepare a tidy dataset from the data obtained at https: [UCI HAR Dataset](//d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+
+It will create and save as text file a dataset of average values of means and standard deviations of measurements for each activity of each subject.
+
+## Contents of Repository
+
+The main data processing script *run_analysis.R* 
+
+The description of variables of the resulting tidy dataset *CodeBook.md*
+
+Explanation of data processing performed by the script *README.md* 
+
+## Running the script
+
+1. Clone this repo to your desktop
+2. Launch R and change the working directory to the folder with this repo's contents.
+3. If you have the UCI HAR Dataset folder or the getdata_projectfiles_UCI HAR Dataset.zip package - move or copy it to the working directory. 
+4. Run the run_analysis.R script.
+5. The resulting dataset will be saved as TidyActivityDataset.txt in the working directory
+
+## Requirements
+
+This script requires the plyr package. It will install and/or load it at the beginning.
+It expects the data to be located in the UCI HAR Dataset subfolder in the working directory.
+
+## Assumptions
+
+1. The structure of folders and files in UCI HAR Dataset is preserved.
+2. The descriptive activity names and their corresponding numeric labels are in the activity_labels.txt file. They are ordered by the numeric label.
+3. The names of measurements are in features.txt file. They are indexed and ordered by their indices.
+4. The variables contianing the means of measurements have -mean() in their names, and those containing standard deviations of measurements have -std() in their names.
+5. The training data is in the train subfolder, and the test data in the test subfolder.
+6. The test and train measurements are in X_train.txt and X_test.txt respectively.
+7. The subject codes for the train and test datasets are in the subject_train.txt and subject_test.txt files respectively.
+8. The numeric activity labels for the train and test datasets are in y_train.txt and y_test.txt respectively.
+9. The data in the Initial Signals subfolders is not required to complete this assignment, so the script does not use it.
+
+## Data processing
+
+1. Read files X_test,X_train.y_test,y_train,Subject_test,Subject_train,features and activity_lables text files into dataframes.
+2. Column bind Dataframes y_test and subject_test and add column names Activity and Subject to it. ->A
+3. Column bind Dataframes y_train and subject_train and add column names Activity and Subject to it. ->B
+4. Merge A and B (dim-10299*2) ->C
+5. Merge X_train and X_test data -> D (dim-10299*561)
+6. Change column names of D from features.txt
+7. Eliminate columns from D which do not have "mean()" or "std()" in the column names. ->E (dim-10299*66)
+8. Column bind C and E (dim-10299*68)
+9. Take mean of observations per activity per subject. (dim-180*68). 
+10. Replace activity numbers with Activity names from activity_lables.txt-> TidyActivityDataSet
+11. use write.table to get a text file from the above Data Frame.
